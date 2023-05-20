@@ -17,12 +17,3 @@ copy_img = ImageGenerator(path=f'{folder}/copy_{image_name}',
                           image_width=image_details['w'],
                           background_color=image_details['background'])
 copy_img.draw_rectangle(rectangles=rectangles_list)
-
-
-# # Print the rectangle properties
-# print('Color:', result['color'])
-# print('Width:', result['width'])
-# print('Height:', result['height'])
-
-# Save the cropped rectangle image
-# result['image'].save('cropped_rectangle.jpg')

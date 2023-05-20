@@ -36,17 +36,18 @@ class ImageGenerator:
 if __name__ == "__main__":
     # settings:
     folder = './images/'
-    image_name = 'image5.png'
+    image_name = 'image6.png'
+    image_height = 1000
+    image_width = 1000
+    background_color = (128, 128, 128)
+    rectangles = [
+        {'w': 50, 'h': 80, 'location': (-120, 200), 'color': (255, 0, 0)},
+        {'w': 90, 'h': 30, 'location': (-260, 40), 'color': (255, 0, 0)},
+        {'w': 70, 'h': 150, 'location': (-20, 60), 'color': (255, 0, 0)},
+    ]
 
     img = ImageGenerator(path=f'{folder}{image_name}',
-                         image_height=1000,
-                         image_width=1000,
-                         background_color=(128, 128, 128))
-    img.draw_rectangle(rectangles=[
-        {'w': 50, 'h': 80,
-            'location': (-120, 200), 'color': (255, 0, 0)},
-        {'w': 90, 'h': 30,
-            'location': (-260, 40), 'color': (255, 0, 0)},
-        {'w': 70, 'h': 150,
-            'location': (-20, 60), 'color': (255, 0, 0)},
-    ])
+                         image_height=image_height,
+                         image_width=image_width,
+                         background_color=background_color)
+    img.draw_rectangle(rectangles=rectangles)
