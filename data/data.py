@@ -8,7 +8,7 @@ csv_rectangle_name = './data/rectangle_data.csv'
 
 def save_image_to_csv(details, csv_name=csv_image_name) -> None:
     fieldnames = ['image_path', 'image_width',
-                  'image_height', 'background_color']
+                  'image_height', 'image_background']
 
     with open(csv_name, 'a') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -20,7 +20,7 @@ def save_image_to_csv(details, csv_name=csv_image_name) -> None:
             'image_path': details.path,
             'image_width': details.image_width,
             'image_height': details.image_height,
-            'background_color': details.background_color,
+            'image_background': details.background_color,
         })
 
 
@@ -58,8 +58,8 @@ def get_from_csv(csv_name) -> tuple:
             if row.get('image_width'):
                 row['image_width'] = int(row['image_width'])
                 row['image_height'] = int(row['image_height'])
-                row['background_color'] = ast.literal_eval(
-                    row['background_color'])
+                row['image_background'] = ast.literal_eval(
+                    row['image_background'])
             # for rectangel
             if row.get('x'):
                 row['x'] = int(row['x'])
