@@ -52,7 +52,6 @@ def get_from_csv(csv_name) -> tuple:
     data = []
     with open(csv_name, 'r') as f:
         reader = csv.DictReader(f)
-        header = reader.fieldnames
         for row in reader:
             # for image
             if row.get('image_width'):
@@ -68,4 +67,4 @@ def get_from_csv(csv_name) -> tuple:
                 row['h'] = int(row['h'])
                 row['color'] = ast.literal_eval(row['color'])
             data.append(row)
-    return data, header
+    return data
