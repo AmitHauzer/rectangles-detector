@@ -1,20 +1,6 @@
 from colorama import Fore
 
 
-def convert_location_to_coordinates(image_width: int, image_height: int, rectangle: dict) -> tuple:
-    """
-    Calculate the rectangle position.
-    """
-    rectangle_x = (
-        image_width - rectangle['w']) // 2 + rectangle['location'][0]
-    rectangle_y = (
-        image_height - rectangle['h']) // 2 + rectangle['location'][1]
-
-    del rectangle['location']
-
-    return rectangle_x, rectangle_y
-
-
 def message(text, result, type=''):
     if type == 'good':
         color = Fore.GREEN
@@ -23,3 +9,17 @@ def message(text, result, type=''):
     elif type == '':
         color = Fore.RESET
     print(f"{text.ljust(22)}{color}{result}{Fore.RESET}")
+
+
+def compare(value1, value2, label):
+    if value1 == value2:
+        message(text=f'\t{label}:', result='Pass.', type='good')
+    else:
+        message(text=f'\t{label}:', result='Failed.', type='error')
+
+
+def check_diff(value1, value2, diff_set, label):
+    if abs(value1 - value2) <= diff_set:
+        message(text=f'\t{label}:', result='Pass.', type='good')
+    else:
+        message(text=f'\t{label}:', result='Failed.', type='error')
