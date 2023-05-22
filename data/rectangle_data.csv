@@ -1,0 +1,14 @@
+image_path,x,y,w,h,color
+
+./images/image1.png,355,660,50,80,"(200, 0, 0)"
+
+./images/image1.png,195,525,90,30,"(140, 140, 0)"
+
+./images/image1.png,445,485,70,150,"(255, 0, 0)"
+
+./images/image2.png,355,660,50,80,"(200, 0, 0)"
+
+./images/image2.png,145,525,190,230,"(140, 140, 0)"
+
+./images/image4.png,655,660,50,80,"(200, 0, 0)"
+./images/image4.png,445,485,70,150,"(255, 0, 100)"
