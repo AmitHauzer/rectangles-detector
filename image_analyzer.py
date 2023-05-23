@@ -40,11 +40,18 @@ class ImageAnalyzer:
         self.rectangles = rectangles_list
 
     def get_image_details(self) -> None:
+        """
+        Get details: width, height and background color.
+        """
         self.image_height, self.image_width, _ = self.image.shape
         self.image_background = tuple(self.image[0, 0][::-1])
 
     def image_tests(self, csv_image: dict):
+        """
+        Compares data from the current image and the CSV 
+        """
         print(f"Image file: '{self.image_path}'")
+        # Get class fields as a dictionary.
         self_dict = vars(self)
         for key in csv_image.keys():
             if key == "image_path":
@@ -52,6 +59,9 @@ class ImageAnalyzer:
             compare(value1=self_dict[key], value2=csv_image[key], label=key)
 
     def rectangle_tests(self, csv_rectangle: dict):
+        """
+        Compares data from the current csv_rectangle and all the analyzed rectangles. 
+        """
         diff_set = 2
         detected = False
         for i, rectangle in enumerate(self.rectangles, 1):
@@ -69,4 +79,4 @@ class ImageAnalyzer:
 
             elif detected == False and i == len(self.rectangles):
                 print(
-                    f"{Fore.RED}Error: Rectangle ({rectangle['x']},{rectangle['y']}) not recognized{Fore.RESET}")
+                    f"{Fore.RED}\tError: Rectangle ({rectangle['x']},{rectangle['y']}) not recognized{Fore.RESET}")
