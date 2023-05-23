@@ -1,0 +1,12 @@
+image_path,image_width,image_height,image_background
+
+./images/image1.png,1000,1000,"(0, 0, 0)"
+
+./images/image2.png,1000,1000,"(0, 0, 0)"
+
+./images/image3.png,1000,1000,"(148, 148, 148)"
+
+./images/image4.png,1000,1000,"(148, 148, 148)"
+
+./images/image5.png,1000,1000,"(148, 148, 148)"
+./images/image6.png,1000,1000,"(0, 0, 0)"
