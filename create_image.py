@@ -19,7 +19,6 @@ class ImageGenerator:
         rectangle_y = (self.image_height -
                        rectangle['h']) // 2 + rectangle['location'][1]
         del rectangle['location']
-
         return rectangle_x, rectangle_y
 
     def draw_rectangle(self, image) -> None:
@@ -44,12 +43,12 @@ class ImageGenerator:
 if __name__ == "__main__":
     # settings:
     folder = './images/'
-    image_name = 'image4.png'
+    image_name = 'image6.png'
     image_height = 1000
     image_width = 1000
-    image_background = (148, 148, 148)
+    image_background = (0, 0, 0)
     rectangles = [
-        {'w': 50, 'h': 80, 'location': (180, 200), 'color': (200, 0, 0)},
+        {'w': 50, 'h': 80, 'location': (-180, -200), 'color': (100, 100, 50)},
         {'w': 190, 'h': 230, 'location': (-260, 140), 'color': (180, 140, 1)},
         {'w': 70, 'h': 150, 'location': (-20, 60), 'color': (255, 0, 100)},
     ]
