@@ -20,7 +20,7 @@ def save_image_to_csv(details, csv_name=csv_image_name) -> None:
             'image_path': details.path,
             'image_width': details.image_width,
             'image_height': details.image_height,
-            'image_background': details.background_color,
+            'image_background': details.image_background,
         })
 
 
@@ -48,7 +48,7 @@ def save_to_csv(details):
     save_rectangles_to_csv(details=details)
 
 
-def get_from_csv(csv_name) -> tuple:
+def get_from_csv(csv_name) -> list:
     data = []
     with open(csv_name, 'r') as f:
         reader = csv.DictReader(f)
